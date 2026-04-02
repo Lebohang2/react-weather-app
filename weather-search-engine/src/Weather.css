@@ -1,0 +1,93 @@
+.WeatherApp{
+    border: 1px solid #dadde1;
+    font-family: arial, sans-serif;
+    padding: 16px;
+    margin: 30px auto;
+    border-radius: 4px;
+}
+.WeatherApp .form-input{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding-right: 180px;
+    margin-left: 10px;
+    border: 1px solid #dadde1;
+    border-radius: 3px;
+}
+ .btn.btn-primary{
+    display:flex;
+    justify-content: center;
+    margin-top: 19px;
+   padding:3px 25px;
+   margin-left: -10px;
+   border-radius: 3px;
+}
+.WeatherApp h1{
+    color:#818183;
+    font-size: 24px;
+  margin: 20px 0 0 0;
+  line-height: 29px;
+ padding: 8px ;
+}
+.WeatherApp ul{
+   margin: 0;
+  padding: 0;  
+}
+.WeatherApp li{
+    font-size: 16px;
+  line-height: 19px;
+  list-style: none;
+    color: #818183; 
+}
+.weather-main {
+  list-style: none;
+  padding-left:20px;
+ opacity: 0.8;
+   text-align: left;
+}
+.weather-main li {
+  margin-left: 10px;
+}
+.weather-details{
+  margin-top: 40px;
+}
+
+.weather-details {
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+  opacity: 0.8;
+  
+}
+.temperature {
+  font-weight: bold;
+  color: rgb(33, 33, 33);
+  font-size: 64px;
+  line-height: 64px;
+  margin-left: 5px;
+  font-weight: 400;
+    margin-top: 33px;
+    display: inline-block;
+    justify-content: flex-start;
+}
+.temperature-number{
+  color: rgb(33, 33, 33);
+  font-size: 64px;
+  line-height: 64px;
+}
+.temperature-unit {
+  font-size: 16px;
+  position: relative;
+  top: -30px;
+  margin-left: 2px;
+}
+
+.WeatherApp img{
+  height: 64px;
+  margin-right: 10px;
+  display: inline-block;
+}
+.WeatherApp .weather-details {
+  margin-top: 90px;
+  display: block;
+}
