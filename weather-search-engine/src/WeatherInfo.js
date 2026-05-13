@@ -1,5 +1,6 @@
 import React from "react";
 import ProvidedDate from "./ProvidedDate";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo(props) {
     {/* MAIN WEATHER SECTION */}
@@ -19,10 +20,7 @@ export default function WeatherInfo(props) {
     
               {/* ICON + TEMP NOW ON LEFT */}
               <div className="d-flex align-items-center mt-3" >
-                <img
-                  src={props.data.icon}
-                  alt="weather icon"
-                />
+                <WeatherIcon icon={props.data.icon} />
                 <div>
                   <span className="temperature-number">{Math.round(props.data.temperature)}</span>
                   <span className="temperature-unit">°C</span>
