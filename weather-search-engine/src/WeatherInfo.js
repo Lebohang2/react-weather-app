@@ -1,6 +1,7 @@
 import React from "react";
 import ProvidedDate from "./ProvidedDate";
 import WeatherIcon from "./WeatherIcon";
+import TemperatureConversion from "./TemperatureConversion";
 
 export default function WeatherInfo(props) {
     {/* MAIN WEATHER SECTION */}
@@ -22,8 +23,7 @@ export default function WeatherInfo(props) {
               <div className="d-flex align-items-center mt-3" >
                 <WeatherIcon icon={props.data.icon} />
                 <div>
-                  <span className="temperature-number">{Math.round(props.data.temperature)}</span>
-                  <span className="temperature-unit">°C</span>
+                  <TemperatureConversion celsius={props.data.temperature} />
                 </div>
               </div>
             </div>
