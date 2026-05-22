@@ -2,11 +2,11 @@ import React from "react";
 import "./WeatherIcon.css";
 
 export default function WeatherIcon(props) {
-  return (
+     return (
     <img
       src={props.icon}
       alt="Weather icon"
-      className="WeatherIcon"
+      className={`WeatherIcon ${props.size}`}
     />
   );
 }

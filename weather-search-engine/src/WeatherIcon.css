@@ -1,6 +1,14 @@
 .WeatherIcon {
-  width: 80px;
   animation: float 3s ease-in-out infinite;
+}
+.WeatherIcon.large {
+  width: 90px;
+  height: 90px;
+}
+
+.WeatherIcon.small {
+  width: 40px;
+  height: 40px;
 }
 
 /* Animation */

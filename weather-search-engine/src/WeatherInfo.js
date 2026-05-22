@@ -21,7 +21,7 @@ export default function WeatherInfo(props) {
     
               {/* ICON + TEMP NOW ON LEFT */}
               <div className="d-flex align-items-center mt-3" >
-                <WeatherIcon icon={props.data.icon} />
+                <WeatherIcon icon={props.data.icon} size="large" />
                 <div>
                   <TemperatureConversion celsius={props.data.temperature} />
                 </div>
