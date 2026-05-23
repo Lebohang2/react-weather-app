@@ -13,6 +13,7 @@ function giveResponse(response) {
   console.log(response.data);
   setWeatherData({
     ready: true,
+    coordinates: response.data.coordinates,
     city: response.data.city,
     date: new Date(response.data.time * 1000),
     temperature: response.data.temperature.current,
@@ -60,7 +61,10 @@ function handleSubmit(event) {
         </div>
       </form>
       <WeatherInfo data={weatherData} />
-      <WeatherForecast icon={weatherData.icon} />
+      <WeatherForecast 
+  coordinates={weatherData.coordinates} 
+  icon={weatherData.icon}
+/>
     </div>
   );
 } else {
