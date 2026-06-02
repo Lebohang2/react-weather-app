@@ -24,9 +24,22 @@ export default function WeatherForecast(props) {
 
   if (!forecast) return "Loading...";
 
- return (
-  <div className="WeatherForecast-col">
-    <WeatherForecastDay data={forecast[0]} />
-  </div>
-);
+  return (
+    <div className="WeatherForecast">
+      <div className="row">
+        {forecast.map(function (dailyForecast, index) {
+          if (index < 6) {
+            return (
+              <div className="col" key={index}>
+                <WeatherForecastDay data={dailyForecast} />
+              </div>
+            );
+          } else {
+            return null;
+          }
+        })}
+      </div>
+    </div>
+  );
 }
+     
