@@ -7,3 +7,9 @@
     opacity: 0.6;
     margin-left:5px;
 }
+.WeatherForecast-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}

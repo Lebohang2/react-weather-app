@@ -1,44 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import WeatherIcon from "./WeatherIcon";
 import "./WeatherForecast.css";
 import axios from "axios";
+import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function WeatherForecast(props) {
-  function giveResponse(response) {
-    console.log(response.data);
-  }
-  console.log(props.coordinates);
+  let [forecast, setForecast] = useState(null);
 
-  if(!props.coordinates) {
-    return null;
-  }
+  useEffect(() => {
+    if (!props.coordinates) return;
 
-  let apiKey = "410o3ft86210d5f3d73f24a4d34d2bab";
-  let lon = props.coordinates.lon;
-  let lat = props.coordinates.lat;
+    let apiKey = "410o3ft86210d5f3d73f24a4d34d2bab";
+    let lon = props.coordinates.longitude;
+    let lat = props.coordinates.latitude;
 
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
 
-  axios.get(apiUrl).then(giveResponse);
+    axios.get(apiUrl).then((response) => {
+      console.log(response.data.daily);
+      setForecast(response.data.daily);
+    });
+  }, [props.coordinates]);
 
-   
-    return(
-         <div className="WeatherForecast">
-        <div className="row">
-            <div className="col text-center">
-                <div className="WeatherForecast-day">
-                Thurs
-                </div>
-                <div className="WeatherForecast-icon">
-                <WeatherIcon icon={props.icon} size="small" />
-                </div>
-                <div className="WeatherForecast-temperature">
-                <span className="WeatherForecast-temperature-max">15°</span>
-                <span className="WeatherForecast-temperature-min">10°</span>    
-                </div>
-                </div>
-                </div>
-                </div>
-                ); 
-   
+  if (!forecast) return "Loading...";
+
+ return (
+  <div className="WeatherForecast-col">
+    <WeatherForecastDay data={forecast[0]} />
+  </div>
+);
 }
