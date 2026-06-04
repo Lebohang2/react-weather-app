@@ -4,7 +4,6 @@ import WeatherIcon from "./WeatherIcon";
 import TemperatureConversion from "./TemperatureConversion";
 
 export default function WeatherInfo(props) {
-    {/* MAIN WEATHER SECTION */}
     return (
         <div className="weatherInfo">
         
